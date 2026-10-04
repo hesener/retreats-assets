@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta name="theme-color" content="#52644d">
+
+  <title>2026 청년2부 가을수련회 신청</title>
+
+  <style>
+    :root {
+      --primary: #52644d;
+      --primary-dark: #3f503b;
+      --primary-light: #eef2eb;
+
+      --background: #f5f7f3;
+      --surface: #ffffff;
+
+      --text: #252822;
+      --muted: #6b7268;
+      --border: #dfe5dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 20px 16px 32px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(82, 100, 77, 0.12),
+          transparent 34%
+        ),
+        var(--background);
+
+      color: var(--text);
+
+      font-family:
+        Pretendard,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Apple SD Gothic Neo",
+        "Noto Sans KR",
+        sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 44px 26px 40px;
+
+      background: var(--primary);
+      color: white;
+
+      border-radius: 26px;
+
+      text-align: center;
+
+      box-shadow:
+        0 20px 50px rgba(63, 80, 59, 0.16);
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      width: 180px;
+      height: 180px;
+
+      top: -100px;
+      right: -70px;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      width: 110px;
+      height: 110px;
+
+      bottom: -65px;
+      left: -45px;
+
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      position: relative;
+      z-index: 1;
+
+      margin: 0 0 15px;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+
+      opacity: 0.7;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+
+      margin: 0;
+
+      font-size: 28px;
+      line-height: 1.4;
+      letter-spacing: -0.03em;
+    }
+
+    .theme {
+      position: relative;
+      z-index: 1;
+
+      display: inline-flex;
+      align-items: center;
+
+      margin-top: 20px;
+      padding: 9px 15px;
+
+      background: rgba(255, 255, 255, 0.11);
+
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .verse {
+      position: relative;
+      z-index: 1;
+
+      margin: 22px auto 0;
+
+      color: rgba(255, 255, 255, 0.84);
+
+      font-size: 13px;
+      line-height: 1.75;
+
+      word-break: keep-all;
+    }
+
+    .verse strong {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: white;
+      font-size: 12px;
+    }
+
+    .card {
+      margin-top: 16px;
+      padding: 25px 22px;
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      box-shadow:
+        0 10px 30px rgba(37, 40, 34, 0.045);
+    }
+
+    .card-title {
+      margin: 0;
+
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .description {
+      margin: 10px 0 0;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.7;
+
+      word-break: keep-all;
+    }
+
+    .info-list {
+      margin-top: 22px;
+
+      border-top: 1px solid #edf0eb;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+
+      gap: 12px;
+
+      padding: 13px 0;
+
+      border-bottom: 1px solid #edf0eb;
+
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .info-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .info-value {
+      font-weight: 700;
+    }
+
+    .apply-area {
+      margin-top: 22px;
+      padding: 20px;
+
+      background: var(--primary-light);
+
+      border-radius: 17px;
+    }
+
+    .apply-area p {
+      margin: 0 0 15px;
+
+      color: var(--primary-dark);
+
+      font-size: 13px;
+      line-height: 1.65;
+
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    .apply-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      min-height: 58px;
+
+      padding: 16px 20px;
+
+      background: var(--primary);
+      color: white;
+
+      border-radius: 15px;
+
+      text-decoration: none;
+
+      font-size: 17px;
+      font-weight: 800;
+
+      box-shadow:
+        0 9px 20px rgba(82, 100, 77, 0.18);
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .apply-button:active {
+      transform: scale(0.985);
+      background: var(--primary-dark);
+    }
+
+    .small-note {
+      margin: 14px 0 0;
+
+      color: var(--muted);
+
+      font-size: 11px;
+      line-height: 1.6;
+
+      text-align: center;
+    }
+
+    footer {
+      padding: 22px 0 4px;
+
+      color: #8b9188;
+
+      font-size: 11px;
+      text-align: center;
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 12px 12px 28px;
+      }
+
+      .hero {
+        padding: 38px 20px 35px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .card {
+        padding: 22px 18px;
+        border-radius: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <section class="hero">
+
+      <p class="eyebrow">
+        2026 YOUTH RETREAT
+      </p>
+
+      <h1>
+        범어교회 청년2부<br>
+        가을수련회
+      </h1>
+
+      <div class="theme">
+        다시, 복음 앞에
+      </div>
+
+      <p class="verse">
+        <strong>골로새서 1:6</strong>
+        이 복음이 이미 너희에게 이르매<br>
+        열매를 맺어 자라는도다
+      </p>
+
+    </section>
+
+
+    <section class="card">
+
+      <h2 class="card-title">
+        수련회 신청
+      </h2>
+
+      <p class="description">
+        2026 청년2부 가을수련회 신청 페이지입니다.
+        아래 내용을 확인한 후 신청 버튼을 눌러주세요.
+      </p>
+
+      <div class="info-list">
+
+        <div class="info-row">
+          <span class="info-label">
+            일정
+          </span>
+
+          <span class="info-value">
+            2026. 10. 16.(금) ~ 10. 18.(주일)
+          </span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">
+            장소
+          </span>
+
+          <span class="info-value">
+            수영로교회 경주수양관 베이스캠프
+          </span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">
+            주제
+          </span>
+
+          <span class="info-value">
+            다시, 복음 앞에
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="apply-area">
+
+        <p>
+          아래 버튼을 누르면<br>
+          수련회 신청 페이지로 이동합니다.
+        </p>
+
+        <a
+          class="apply-button"
+          href="https://script.google.com/macros/s/AKfycbxAZ-cpkh5zCWAbru8tAg2N4ofRqQIgsALTREak-8s4C26rfaOoiH209egyJR9mNXwz/exec"
+        >
+          수련회 신청하기 →
+        </a>
+
+      </div>
+
+      <p class="small-note">
+        신청 페이지가 열리지 않을 경우
+        Chrome 또는 기본 브라우저에서 다시 열어주세요.
+      </p>
+
+    </section>
+
+
+    <footer>
+      범어교회 청년2부 · 2026 가을수련회
+    </footer>
+
+  </main>
+
+</body>
+</html>
